@@ -460,7 +460,7 @@ def test_real():
 
     np.random.seed(0)
     # simple lag test
-    seq = np.random.randn(n_seq, n_steps, n_in)
+    seq = np.random.randn(n_seq, n_steps, n_in).astype('float32')
     targets = np.zeros((n_seq, n_steps, n_out))
 
     targets[:, 1:, 0] = seq[:, :-1, 3]  # delayed 1
